@@ -27,8 +27,13 @@ input CreateDonationInput {
 #   id: Int!
 # }
 
+input OrderByParams {
+  field: String
+  direction: String
+}
+
 type Query {
-  donations: [Donation]!
+  donations(orderBy: OrderByParams): [Donation]!
   donation(id: Int!): Donation
 }
 
